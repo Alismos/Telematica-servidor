@@ -7,21 +7,21 @@ import shutil
 
 HEADER = 1024
 PORT = 3000
-SERVER = '54.226.49.19'
-ADDR = (SERVER, PORT)
+server = '54.226.49.19'
+ADDR = (server, PORT)
 FORMAT = 'utf-8'
 
-server_ip = socket.gethostbyname(server)
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+server_ip = socket.gethostbyname(server)
 
 try:
-    server.bind((server, port))
+    s.bind((server, PORT))
 
 except socket.error as e:
     print(str(e))
 
-server.listen(2)
+s.listen(2)
 print("Waiting for a connection")
 
 
