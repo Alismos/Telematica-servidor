@@ -12,7 +12,7 @@ ADDR = (server, PORT)
 FORMAT = 'utf-8'
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+print(server)
 server_ip = socket.gethostbyname(server)
 
 try:
