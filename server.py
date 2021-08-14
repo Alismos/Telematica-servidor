@@ -11,9 +11,9 @@ SERVER = '54.226.49.19'
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
 
+server_ip = socket.gethostbyname(server)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server_ip = socket.gethostbyname(server)
 
 try:
     server.bind((server, port))
