@@ -128,12 +128,12 @@ def handle_client(conn, addr):
 
 
 def start():
-    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server.bind(ADDR)
-    server.listen(10)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind(ADDR)
+    s.listen(10)
     print(f"[LISTENING] Server is listening on {SERVER}")
     while True:
-        conn, addr = server.accept()
+        conn, addr = s.accept()
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount() - 1}")
