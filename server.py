@@ -15,15 +15,6 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 server_ip = socket.gethostbyname(server)
 
-try:
-    s.bind((server, PORT))
-
-except socket.error as e:
-    print(str(e))
-
-s.listen(2)
-print("Waiting for a connection")
-
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
